@@ -1,33 +1,43 @@
 const QUESTIONS = [
   {
-    id: "bodyType",
-    question: "What type of car are you interested in?",
-    options: ["Sedan", "SUV", "Truck", "Electric"]
+    id: "modelType",
+    question: "What type of car model are you looking for?",
+    options: ["Sports", "Sedan", "SUV", "Truck", "Hatchback"]
   },
   {
-    id: "budget",
-    question: "What’s your budget range?",
-    options: ["<$25k", "$25k–$40k", "$40k–$60k", "$60k+"]
+    id: "yearRange",
+    question: "What model year range are you interested in?",
+    options: ["2021–2025", "2016–2020", "2011–2015", "2005–2010", "Older"]
   },
   {
-    id: "condition",
-    question: "Would you prefer a new or used vehicle?",
-    options: ["New", "Used"]
+    id: "priceRange",
+    question: "What’s your ideal price range?",
+    options: ["Under $15,000", "$15,000–$25,000", "$25,000–$40,000", "$40,000+"]
   },
   {
-    id: "drive",
-    question: "What’s most important to you?",
-    options: ["Fuel economy", "Performance", "Cargo space", "Tech features"]
+    id: "transmission",
+    question: "Which transmission do you prefer?",
+    options: ["Automatic", "Manual", "No preference"]
   },
   {
-    id: "lifestyle",
-    question: "What will you primarily use your car for?",
-    options: ["Commuting", "Road trips", "Family outings", "Work"]
+    id: "mileageRange",
+    question: "How much mileage are you comfortable with?",
+    options: ["Under 10,000 miles", "10,000–30,000 miles", "30,000–60,000 miles", "60,000+ miles"]
   },
-  { 
-    id: "passengers",
-    question: "How many passengers do you usually carry?",
-    options: ["1", "2-3", "4-5", "6+"]
+  {
+    id: "fuelType",
+    question: "What type of fuel do you prefer?",
+    options: ["Gasoline", "Diesel", "Hybrid", "Electric"]
+  },
+  {
+    id: "mpgPreference",
+    question: "What fuel efficiency (MPG) are you aiming for?",
+    options: ["Under 25 MPG (performance)", "25–35 MPG (balanced)", "35+ MPG (efficient)"]
+  },
+  {
+    id: "engineSize",
+    question: "What engine size do you prefer?",
+    options: ["Under 1.5L", "1.5L–2.0L", "2.0L–3.0L", "3.0L+"]
   }
 ];
 
