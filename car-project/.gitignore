@@ -30,3 +30,7 @@ dist-ssr
 # Node dependencies
 /node_modules
 /dist
+
+# Other
+# Generated data files (the raw CSV)
+/raw_data

@@ -2,14 +2,13 @@ import pandas as pd
 import json
 import os
 
-# --- Configuration ---
-INPUT_CSV_FILE = 'car-project/data_raw/toyota.csv' 
-# This is the file name you will import directly into React
+# .csv file location
+INPUT_CSV_FILE = 'data_raw/toyota.csv' 
+
+# .json output to then use as my database
 OUTPUT_JSON_FILE = 'src/constants/carDatabase.json' 
-# ---------------------
 
 def convert_csv_to_json(csv_path, json_path):
-    """Loads CSV data and exports it as a JSON array of records."""
     
     if not os.path.exists(csv_path):
         print(f"Error: CSV file not found at {csv_path}")
@@ -19,16 +18,22 @@ def convert_csv_to_json(csv_path, json_path):
         # Load the data using Pandas
         df = pd.read_csv(csv_path)
         
-        # --- OPTIONAL: Clean/Simplify Data Here ---
-        # If the dataset is too big, you might filter columns you don't need
-        # df = df[['model', 'year', 'price', 'mileage', 'fuel_type']]
-        # ------------------------------------------
+        df.columns = df.columns.str.strip()
+
+        # Price and Mileage are int
+        df['price'] = pd.to_numeric(df['price'], errors='coerce', downcast='integer')
+        df['mileage'] = pd.to_numeric(df['mileage'], errors='coerce', downcast='integer')
 
         # Convert the DataFrame to a JSON string
         # 'records' orientation outputs a list of JSON objects (e.g., [{}, {}, ...])
-        json_data = df.to_json(orient='records', indent=4) 
+        json_data = df.to_json(
+            orient='records', 
+            indent=4,
+            double_precision=1
+            ) 
         
         # Save the JSON string to the target file
+        os.makedirs(os.path.dirname(json_path), exist_ok=True)
         with open(json_path, 'w') as f:
             f.write(json_data)
         
