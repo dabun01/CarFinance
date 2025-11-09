@@ -1,0 +1,163 @@
+:root {
+  /* --bg: #0b0f14; */
+  --card: #121821;
+  --text: #e9eef5;
+  --muted: #9fb3c8;
+  --accent: #007acc;
+  --accent-2: #00b894;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 { margin: 0 0 16px; font-size: 28px; }
+
+.question-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.option-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.option-item { margin: 8px 0; }
+
+.option-button {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #243041;
+  background: #18202c;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+.option-button:hover { background: #1e2938; }
+.option-button.selected {
+  border-color: var(--accent);
+  outline: 2px solid rgba(0,122,204,0.25);
+}
+
+.nav-row {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 4px;
+  justify-content: flex-end;
+}
+
+button.primary, button.secondary {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+button.primary { background: var(--accent); color: white; }
+button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+button.secondary { background: #263244; color: var(--text); }
+
+button.link {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.progress-wrap { margin-bottom: 16px; }
+.progress-track {
+  width: 100%; height: 8px; background: #1a2431; border-radius: 999px; overflow: hidden;
+}
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.progress-text { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+.result-block {
+  background: #0f141c;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #1f2a3b;
+  overflow: auto;
+}
+
+.car-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+}
+
+.car-title {
+  margin: 0 0 8px;
+  color: #007acc;
+}
+
+.car-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 4px 0 12px;
+}
+
+.car-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #555;
+}
+
+.car-specs li {
+  margin-bottom: 6px;
+}
+
+.wizard-section {
+  padding: 50px 80px;
+  box-sizing: border-box;
+  background-color: #18202c;
+}
+
+.wizard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wizard-header h1 {
+  margin: 0;
+}
+
+.wizard-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.wizard-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
