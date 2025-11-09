@@ -1,0 +1,168 @@
+:root {
+  --bg: #ffffff;
+  --ink: #0c0c0c;
+  --brand: #aab189;
+  --band: #0e2215;
+  --band-ink: #cde0c9;
+}
+
+.landing {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+:global(.app) {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+} 
+
+/* Badge */
+.brand-badge {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: var(--brand);
+  color: var(--band);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 4vw;
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.deco {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.bar {
+  height: 6px;
+  background: var(--brand);
+  border-radius: 6px;
+}
+.bar-lg {
+  width: 80px;
+}
+.bar-sm {
+  width: 30px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Make car image larger */
+.hero-image img {
+  width: 100%;
+  max-width: 100vh;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Purpose section - full width dark band */
+.purpose {
+  background: var(--band);
+  color: var(--band-ink);
+  width: 100%;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.purpose-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+.purpose h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.purpose p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Floating button */
+.pager {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 78px;
+  height: 78px;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--band);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+.pager:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 2vw;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10px;
+  }
+
+  .purpose-inner {
+    text-align: center;
+  }
+}
